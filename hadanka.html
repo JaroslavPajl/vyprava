@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Výprava pokračuje</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #f2e9dc;
+      font-family: 'Georgia', serif;
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 30px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      background-image: url('https://i.imgur.com/zX3YzQe.jpg'); /* Pergamenový styl (volitelný) */
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 0 20px #000;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 10px;
+      border: none;
+      background-color: #5a3e1b;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Odpověz správně, poutníku...</h2>
+  <p>Zadej odpověď na hádanku:</p>
+
+  <input type="text" id="answer" placeholder="Sem napiš odpověď..." />
+  <button onclick="checkAnswer()">Potvrdit</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer').value.trim();
+      const correct = "19";
+      const resultDiv = document.getElementById("result");
+
+      if (input === correct) {
+        resultDiv.innerHTML = `
+⟪  Svitek pokračuje  ⟫
+
+A tak jsi došla až sem...  
+Tvá odpověď byla správná a cesta se znovu otevírá.
+
+Nyní kráčej dál — tam, kde [sem doplníš popis místa nebo souřadnice].
+
+Strom, který hledáš, ční osamocen v krajině,  
+a vysoko ve větvích na tebe čeká dar.
+
+(PS: Pokud tu má být ještě další místo, přepiš tento text.)`;
+      } else {
+        resultDiv.innerHTML = "Tohle ještě není ta pravá odpověď. Zkus to znovu, poutníku...";
+      }
+    }
+  </script>
+
+</body>
+</html>
