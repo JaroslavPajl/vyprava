@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <title>Výprava pokračuje</title>
-<style>
-  body {
-    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-    background-size: cover;
-    color: #f0e6d2;
-    font-family: 'Georgia', serif;
-    text-shadow: 1px 1px 3px #000;
-    padding: 2em;
-  }
-</style>
+
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0e6d2;
+      font-family: 'Georgia', serif;
+      text-shadow: 1px 1px 3px #000;
+      padding: 2em;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
 
     input[type="text"] {
       width: 100%;
@@ -21,6 +26,8 @@
       margin-top: 10px;
       border-radius: 5px;
       border: 1px solid #aaa;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #f0e6d2;
     }
 
     button {
@@ -37,8 +44,9 @@
     #result {
       margin-top: 20px;
       padding: 15px;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
+      background: none;
+      color: #f0e6d2;
+      text-shadow: 1px 1px 2px #000;
       white-space: pre-wrap;
     }
   </style>
@@ -63,15 +71,15 @@
         resultDiv.innerHTML = `
 ⟪  Svitek pokračuje  ⟫
 
-A tak jsi došla až sem...  
+A tak jsi došla až sem, poutnice…  
 Tvá odpověď byla správná a cesta se znovu otevírá.
 
-Nyní kráčej dál — tam, kde [sem doplníš popis místa nebo souřadnice].
+Kráčej dál — tam, kde [sem doplníš popis místa nebo souřadnice].
 
 Strom, který hledáš, ční osamocen v krajině,  
 a vysoko ve větvích na tebe čeká dar.
 
-(PS: Pokud tu má být ještě další místo, přepiš tento text.)`;
+(Pokud tu má být ještě mezikrok, přepiš tento text.)`;
       } else {
         resultDiv.innerHTML = "Tohle ještě není ta pravá odpověď. Zkus to znovu, poutníku...";
       }
