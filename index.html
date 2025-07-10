@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <title>Výprava pokračuje</title>
-
   <style>
-   body {
-  background: url('https://cdn.pixabay.com/photo/2021/08/27/12/18/forest-6578551_1280.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #f0e6d2;
-  font-family: 'Georgia', serif;
-  text-shadow: 1px 1px 3px #000;
-  padding: 2em;
-}
-
-    h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    body {
+      background: url('https://cdn.pixabay.com/photo/2021/08/27/12/18/forest-6578551_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0e6d2;
+      font-family: 'Georgia', serif;
+      text-shadow: 1px 1px 3px #000;
+      padding: 2em;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
-
+    h2 {
+      margin-bottom: 0.1em;
+    }
     input[type="text"] {
       width: 100%;
+      max-width: 400px;
       padding: 10px;
       font-size: 18px;
       margin-top: 10px;
       border-radius: 5px;
       border: 1px solid #aaa;
-      background-color: rgba(255, 255, 255, 0.1);
-      color: #f0e6d2;
+      box-sizing: border-box;
     }
-
     button {
       padding: 10px 20px;
       font-size: 18px;
@@ -39,22 +40,26 @@
       color: white;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-
+    button:hover {
+      background-color: #7b532b;
+    }
     #result {
-  margin-top: 20px;
-  padding: 20px 25px;
-  background-color: rgba(30, 20, 10, 0.75); /* tmavě hnědý průhledný pergamen */
-  border: 2px solid #8B5E3C; /* teplý ořechový rámeček */
-  border-radius: 12px;
-  box-shadow: 0 0 15px 3px rgba(139, 94, 60, 0.8);
-  font-family: 'Georgia', serif;
-  font-size: 19px;
-  color: #F3E9D2; /* jemná slonovinová barva */
-  text-shadow: 1px 1px 3px #3B2F1B;
-  white-space: pre-wrap;
-  line-height: 1.5;
-}
+      margin-top: 20px;
+      padding: 20px 25px;
+      background-color: rgba(30, 20, 10, 0.75);
+      border: 2px solid #8B5E3C;
+      border-radius: 12px;
+      box-shadow: 0 0 15px 3px rgba(139, 94, 60, 0.8);
+      font-family: 'Georgia', serif;
+      font-size: 19px;
+      color: #F3E9D2;
+      text-shadow: 1px 1px 3px #3B2F1B;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      max-width: 600px;
+    }
   </style>
 </head>
 <body>
@@ -74,18 +79,17 @@
       const resultDiv = document.getElementById("result");
 
       if (input === correct) {
-        resultDiv.innerHTML = `
-⟪  Svitek pokračuje  ⟫
+        resultDiv.innerHTML = `⟪  Svitek pokračuje  ⟫
 
-A tak jsi došla až sem, poutnice…  
+A tak jsi došla až sem...  
 Tvá odpověď byla správná a cesta se znovu otevírá.
 
-Kráčej dál — tam, kde [sem doplníš popis místa nebo souřadnice].
+Nyní kráčej dál — tam, kde [sem doplníš popis místa nebo souřadnice].
 
 Strom, který hledáš, ční osamocen v krajině,  
 a vysoko ve větvích na tebe čeká dar.
 
-(Pokud tu má být ještě mezikrok, přepiš tento text.)`;
+(PS: Pokud tu má být ještě další místo, přepiš tento text.)`;
       } else {
         resultDiv.innerHTML = "Tohle ještě není ta pravá odpověď. Zkus to znovu, poutníku...";
       }
